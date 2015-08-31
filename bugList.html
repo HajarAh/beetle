@@ -1,0 +1,87 @@
+<div class="container-fluid containerBackground " ng-controller="mainController">
+	<div class="row conditionTop">
+		<div class="col-md-6">
+			<span class="gras gros">Filter Bugs</span> <button ng-hide="clicked" ng-click="clicked=true" type="button" class="btn btn-default">+</button> <button ng-hide="!clicked" ng-click="clicked=false" type="button" class="btn btn-default">-</button>
+		</div>
+		<div class="col-md-6">
+			<button ng-click="#/reportBug" type="button" class="btn btn-default addReportButton">Report a new bug</button>
+		</div>
+	</div>
+	<div class="row conditionTop" ng-show="clicked">
+		<div class="col-md-3">    
+			<label class="control-label"> Product </label>
+			<select class="combobox" style="width:200px" g-options="bug.product for bug in bugs track by bug.product" ng-model="liste">
+				<option value="{{bug}}" ng-repeat="bug in bugs | uniqueProduct">{{bug}}</option>
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label class="control-label"> Bug Status </label>
+			<select class="combobox" style="width:200px" g-options="bug.status for bug in bugs track by bug.status | unique : 'bug.status'" ng-model="listes">
+				<option value="{{bug}}" ng-repeat="bug in bugs | uniqueStatus">{{bug}}</option>
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label class="control-label"> Version </label>
+			<select class="combobox" style="width:200px" ng-model="listeV">
+				<option value="{{bug}}" ng-repeat="bug in bugs | uniqueVersion">{{bug}}</option>
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label class="control-label"> Forecast </label>
+			<select class="combobox" style="width:200px" ng-model="listeF">
+				<option value="{{bug}}" ng-repeat="bug in bugs | uniqueForecast">{{bug}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="row margTop">
+		<div class="col-md-6">
+			<div class="gros">Number of visible bugs : {{(bugs| filter : liste | filter : listes | filter : listeV | filter : listeF | filter : search).length}}</div>
+			<div class="gros">Total number of bugs : {{bugs.length}}</div>
+		</div>
+	</div>
+	<div class="row filters">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-hover borderTable">
+					<thead>
+						<tr>
+							<td class="gras gros"> Reference </td>
+							<td class="gras gros"> Summary </td>
+							<td class="gras gros"> Status </td>
+							<td class="gras gros"> Version </td>
+							<td class="gras gros"> Product </td>
+						</tr>
+					</thead>
+					<tbody class="gros">
+						<tr ng-repeat="bug in bugs | filter : liste | filter : listes | filter : listeV | filter : listeF | filter : search">
+							<td><a href="#/bugDetails">{{bug.reference}}</a></td>
+							<td>{{bug.summary}}</td>
+							<td>{{bug.status}}</td>
+							<td>{{bug.version}}</td>
+							<td>{{bug.product}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<nav class="paginationAlign">
+				<ul class="pagination">
+					<li>
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="active"><a href="#">1</a></li>
+					<li ><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li>
+						<a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>

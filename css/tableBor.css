@@ -1,0 +1,19 @@
+
+
+.borderless tr td{
+
+	border : none !important;
+
+
+};
+
+.blue tr td {
+    background-color:blue !important;
+};
+
+.gras {
+
+	font-weight: 30px;
+};
+
+

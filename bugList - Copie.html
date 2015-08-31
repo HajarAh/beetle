@@ -1,0 +1,97 @@
+<div class="container-fluid containerBackground " ng-controller="mainController">
+	<div class="row tabT">
+		<div class="col-md-3">    
+			<label class="control-label"> Product </label>
+			<select class="combobox" style="width:200px" ng-options="bug.product for bug in bugs track by bug.product | unique : 'bug.product'" ng-model="liste">
+<!-- 				<option value="AL" selected>All</option>
+				<option value="WS">Wakanda Server</option>
+				<option value="WT">Wakanda Studio</option> -->
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label class="control-label"> Bug Status </label>
+			<select class="combobox" style="width:200px">
+				<option value="AL" selected>All</option>
+				<option value="IP">In progress</option>
+				<option value="VR">Verified and reproducible</option>
+				<option value="VNR">Verified and not reproducible</option>
+				<option value="F">Fixed</option>
+				<option value="SB">Standard behaviour</option>
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label class="control-label"> Version </label>
+			<select class="combobox" style="width:200px">
+				<option value="AL" selected>All</option>
+				<option value="V1">1.0</option>
+				<option value="VD">DEV</option>
+				<option value="V2">2.0</option>
+				<option value="V3">3.0</option>
+				<option value="V4">4.0</option>
+				<option value="V5">5.0</option>
+				<option value="V6">6.0</option>
+				<option value="V7">7.0</option>
+				<option value="V8">8.0</option>
+				<option value="V9">9.0</option>
+				<option value="V10">10.0</option>
+				<option value="V11">11.0</option>
+			</select>
+		</div>
+		<div class="col-md-3">
+			<label class="control-label"> Forecast </label>
+			<select class="combobox" style="width:200px">
+				<option value="AL" >All</option>
+				<option value="W9">Wakanda 9.0</option>
+				<option value="W10">Wakanda 10</option>
+			</select>
+		</div>
+	</div>
+	<div class="row filters">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-hover borderTable">
+					<thead>
+						<tr>
+							<td class="gras gros"> Reference </td>
+							<td class="gras gros"> Summary </td>
+							<td class="gras gros"> Status </td>
+							<td class="gras gros"> Version </td>
+							<td class="gras gros"> Product </td>
+						</tr>
+					</thead>
+					<tbody class="gros">
+						<!--<tr ng-repeat="bug in bugs | filterBy: ['product']: liste.product">-->
+						<!--<tr ng-repeat="bug in bugs | filter : product:liste.product | filter : status:liste.status | filter : version:liste.version | filter : summary:liste.forecast }">-->
+						<!--<tr ng-repeat="bug in bugs | filter:liste.product |filter:liste.status |filter:liste.version |filterliste.forecast }">-->
+						<tr ng-repeat="bug in bugs | filter : liste">
+							<td><a href="#/bugDetails">{{bug.reference}}</a></td>
+							<td>{{bug.summary}}</td>
+							<td>{{bug.status}}</td>
+							<td>{{bug.version}}</td>
+							<td>{{bug.product}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<nav class="paginationAlign">
+				<ul class="pagination">
+					<li>
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="active"><a href="#">1</a></li>
+					<li ><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li>
+						<a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>

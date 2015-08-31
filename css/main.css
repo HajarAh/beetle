@@ -1,0 +1,107 @@
+            @font-face {
+                font-family: 'Helvetica45';
+                src:url('http://static.wix.com/services/html-landing/hp/brazil/fonts/normal/45.eot?#iefix') format('embedded-opentype'),
+                    url('http://static.wix.com/services/html-landing/hp/brazil/fonts/normal/45.ttf') format('truetype'),
+                    url('http://static.wix.com/services/html-landing/hp/brazil/fonts/normal/45.eot'),
+                    url('http://static.wix.com/services/html-landing/hp/brazil/fonts/normal/45.svg#HelveticaRegular') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body {
+                font-family: Helvetica45;
+            }
+            .container-fluid {
+				margin-top: 90px;
+				width: 960px;
+				margin-bottom: 90px;
+			}
+            .container-fluidLogin {
+                margin-top: 60px;
+                width: 800px;
+            }
+            .header {
+                background-color: #f5f5dc;
+                margin-top: 60px; 
+            }
+			.filters{
+				margin-top: 30px;
+			}
+			.gras {
+				font-weight: bold;
+			}
+            .gros {
+                font-size: 18px;
+            }
+            .grand {
+                font-size: 16px;
+            }
+            .ital {
+                font-style: italic;
+            }
+            .underline {
+                text-decoration: underline;
+            }
+            .margTop {
+                margin-top: 20px;
+            }
+            .margTopPlus {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .borderWhite {
+                border: groove 2px #f5f5dc;
+                border-radius: 5px;
+            }
+            .borderTable {
+                border: dashed 2px #f5f5dd;
+                border-radius: 5px;
+            }
+            .borderLeft {
+                border-left: solid 4px #24c9c5;
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+            .paginationAlign {
+            	text-align: right;
+            }
+            .containerBackground {
+                background-color: #f5f5dc;
+            }
+            .bodyBackground {
+                background-color: #7FC6BC;
+            }
+            .navbar-xs {
+                min-height:54px; height: 54px; 
+            }
+            .navbar-xs .navbar-brand{ 
+                padding: 0px 12px;font-size: 16px;line-height: 28px;
+            }
+            .navbar-xs .navbar-nav > li > a {  
+                padding-top: 0px; padding-bottom: 0px; line-height: 28px; 
+            }
+            .conditionTop {
+                margin-top: 18px;
+                margin-bottom: 18px;
+            }
+            .conditionTopPlus {
+                margin-top: 18px;
+                margin-bottom: 40px;
+            }
+            .flo {
+                height: 200px;
+                width : 600px;
+                text-align: justify;
+                border: groove 1px #24c9c5;
+                overflow: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .registerTop {
+                margin-top: 5px;
+            }
+            .form-control {
+                padding: 6px 85px;
+                width: 60px;
+            }
+            .addReportButton {
+                float: right;
+            }

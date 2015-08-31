@@ -1,0 +1,48 @@
+<div class="container-fluid" ng-controller="singlebugController">
+    <div class="panel panel-responsive containerBackground">
+        <div class="panel-heading">
+            <h2 class="panel-title gras gros">
+                <div class="col-md-6">
+                    31/08/2015
+                </div>
+                <div class="col-md-6">
+                    <a href="#/">Back to Bugs List</a>
+                </div>
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                <dl class="gros">
+                    <dt>User</dt>
+                    <dd>Bourharas</dd>
+                    <dt>Product</dt>
+                    <dd>Wakanda Server</dd>
+                    <dt>Version</dt>
+                    <dd>10.0</dd>                
+                    <dt>Platform</dt>
+                    <dd>Windows</dd>                
+                    <dt>Status</dt>
+                    <dd>In progress</dd>
+                </dl>
+            </div>
+            <div class="col-md-9 borderLeft">
+                <div class="gras gros"> PROBLEM: </div>
+                <div>[server][pop3 Module] getAllMail() fails to return mails </div>
+                <div class="gras gros margTop">STEPS TO REPRODUCE THE BUG: </div>
+                <ol>
+                    <li>create a new solution</li>
+                    <li>create a new js file in the project</li>
+                    <li>add the attached js file (pop3test.js) to the project</li>
+                    <li>replace the parameters within the file with correct ones, (important: choose an email that contain more that 67000 mail to retrieve)</li>
+                    <li>run the code,</li>
+                </ol>   
+                <div class="gras gros margTop">ACTUAL RESULT:</div>
+                <div>an error is fired see attached screenshot (error.jpg) </div>
+                <div class="gras gros margTop">EXPECTED RESULT:</div>
+                <div>arr array contain all the mails of the inbox </div>
+                <div class="gras gros margTop">NOTE:</div>
+                <div>if you do not have possibility to test with mail that contain 67000, you can stop the debugger in the retrieving method for some time (3min) and run, </div>
+            </div>
+        </div>
+    </div>
+</div>
